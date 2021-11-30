@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+export PYBUILD_NAME=python-os-ken
+
+include /usr/share/openstack-pkg-tools/pkgos.make
+
+%:
+	dh $@ --with python3 --buildsystem=pybuild
+
+override_dh_auto_install:
+	pkgos-dh_auto_install --no-py2
+
+override_dh_auto_test:
+ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
+	for i in $(PYTHON3S) ; do \
+		http_proxy=127.0.0.1:9 https_proxy=127.0.0.1:9 PYTHONPATH=. python$$i os_ken/tests/run_tests.py ; \
+	done
+endif
+
+override_dh_python3:
+	dh_python3 --shebang=/usr/bin/python3
+
+override_dh_auto_clean:
+	dh_auto_clean

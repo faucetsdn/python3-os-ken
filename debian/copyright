@@ -1,0 +1,41 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: os-ken
+Source: https://docs.openstack.org/os-ken/latest/
+Comment: os-ken is a fork of the ryu project
+
+Files: *
+Copyright: 2014 Ryu Project Team <ryu-devel@lists.sourceforge.net>,
+           2010-2011 OpenStack LLC,
+           2010 United States Government,
+           2011-2017 Nippon Telegraph and Telephone Corporation,
+           2011-2014 YAMAMOTO Takashi <yamamoto@valinux.co.jp>,
+           2014 VA Linux System Japan,
+           2013-2014 Isaku Yamahata <yamahata@valinux.co.jp>,
+           2013 Stratosphere Inc.,
+           2013 Hewlett-Packard Development Company, L.P.,
+           2014 Rackspace Hosting,
+           2014 Xinguard, Inc.,
+           2016 Bouygues Telecomm,
+           2016 Rackspace US, Inc.,
+           2016 Fumihiko Kakuma <kakuma@valinux.co.jp>
+License: Apache-2.0
+
+Files: debian/*
+Copyright: 2019 Canonical Ltd
+License: Apache-2.0
+
+License: Apache-2.0
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ .
+    http://www.apache.org/licenses/LICENSE-2.0
+ .
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ .
+ On Debian-based systems the full text of the Apache version 2.0 license
+ can be found in `/usr/share/common-licenses/Apache-2.0'.

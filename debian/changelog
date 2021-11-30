@@ -1,0 +1,80 @@
+python-os-ken (2.1.0-0ubuntu1) impish; urgency=medium
+
+  * New upstream release for OpenStack Xena.
+  * d/control: Align (Build-)Depends with upstream.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Tue, 07 Sep 2021 14:18:09 -0400
+
+python-os-ken (2.0.0-0ubuntu1) impish; urgency=medium
+
+  * New upstream release for OpenStack Xena.
+  * d/control: Align (Build-)Depends with upstream.
+
+ -- Chris MacNaughton <chris.macnaughton@ubuntu.com>  Wed, 09 Jun 2021 07:39:15 +0000
+
+python-os-ken (1.3.0-0ubuntu1) hirsute; urgency=medium
+
+  * d/control: Update VCS paths for move to lp:~ubuntu-openstack-dev.
+  * New upstream release for OpenStack Wallaby.
+  * d/control: Align (Build-)Depends with upstream.
+
+ -- Chris MacNaughton <chris.macnaughton@ubuntu.com>  Mon, 07 Dec 2020 11:19:23 +0000
+
+python-os-ken (1.2.0-0ubuntu1) groovy; urgency=medium
+
+  * New upstream release for OpenStack Victoria.
+  * d/p/monkey-patch-original-current-thread.patch: Dropped. Fixed
+    in new upstream release.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Fri, 11 Sep 2020 15:56:41 -0400
+
+python-os-ken (1.1.0-0ubuntu1) groovy; urgency=medium
+
+  * New upstream release for OpenStack Victoria.
+  * d/control: Align (Build-)Depends with upstream.
+
+ -- Chris MacNaughton <chris.macnaughton@canonical.com>  Fri, 24 Jul 2020 13:21:34 +0000
+
+python-os-ken (1.0.0-0ubuntu2) groovy; urgency=medium
+
+  * d/p/monkey-patch-original-current-thread.patch: Cherry-picked
+    from upstream to fix Python 3.8 monkey patching (LP: #1863021).
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Thu, 14 May 2020 13:02:34 -0400
+
+python-os-ken (1.0.0-0ubuntu1) focal; urgency=medium
+
+  * New upstream release for OpenStack Ussuri.
+  * d/control: Drop remaining py2 Build-Depends.
+  * d/rules: Switch to pybuild.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Thu, 12 Mar 2020 10:09:57 -0400
+
+python-os-ken (0.4.1-0ubuntu1) eoan; urgency=medium
+
+  * New upstream release for OpenStack Train.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Wed, 25 Sep 2019 14:19:43 -0400
+
+python-os-ken (0.4.0-0ubuntu1) eoan; urgency=medium
+
+  * New upstream release for OpenStack Train.
+  * d/control: Align (Build-)Depends with upstream.
+  * d/gbp.conf: Align with other Ubuntu-maintained OpenStack packages.
+  * d/rules: Drop mv's of requirements unit test module as it has
+    been removed from the upstream source.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Tue, 30 Jul 2019 15:35:04 -0400
+
+python-os-ken (0.3.1-0ubuntu2) disco; urgency=medium
+
+  * d/rules: Switch | -> ||.
+  * d/*: Misc packaging tidy.
+
+ -- James Page <james.page@ubuntu.com>  Thu, 14 Mar 2019 07:03:24 +0000
+
+python-os-ken (0.3.1-0ubuntu1) disco; urgency=low
+
+  * Initial release for OpenStack Stein.
+
+ -- James Page <james.page@ubuntu.com>  Fri, 01 Feb 2019 09:30:51 +0000
