@@ -1,0 +1,30 @@
+name: Test building debian package
+
+on: pull_request
+
+env:
+  DEBIAN_FRONTEND: noninteractive
+
+jobs:
+  debian-package:
+    name: "Build debian package"
+    runs-on: ubuntu-latest
+    container:
+      image: "debian:latest"
+    steps:
+      - name: Install dependencies
+        run: |
+          apt-get update
+          apt-get -y upgrade
+          apt-get -y install devscripts dpkg-dev debhelper equivs
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Bump version
+        run: |
+          export DEBEMAIL='maintainers@faucet.nz'
+          export DEBFULLNAME='Faucet Maintainers'
+          debchange -b "Test release"
+      - name: Build package
+        run: |
+          mk-build-deps -i -r -t 'apt-get -f -y --force-yes'
+          dpkg-buildpackage -b -us -uc -rfakeroot
