@@ -12,9 +12,7 @@ override_dh_auto_install:
 
 override_dh_auto_test:
 ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
-	for i in $(PYTHON3S) ; do \
-		http_proxy=127.0.0.1:9 https_proxy=127.0.0.1:9 PYTHONPATH=. python$$i os_ken/tests/run_tests.py ; \
-	done
+	pkgos-dh_auto_test --no-py2
 endif
 
 override_dh_python3:

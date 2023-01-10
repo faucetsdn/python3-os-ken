@@ -1,3 +1,47 @@
+python-os-ken (2.5.0-0ubuntu3) kinetic; urgency=medium
+
+  * d/py3dist-overrides: Add ncclient to ensure dh_python3 does not
+    add python3-ncclient to Depends.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Tue, 13 Sep 2022 12:14:07 -0400
+
+python-os-ken (2.5.0-0ubuntu2) kinetic; urgency=medium
+
+  * d/control: Move python3-ncclient to Suggests until in main.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Tue, 13 Sep 2022 12:02:45 -0400
+
+python-os-ken (2.5.0-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release for OpenStack Zed.
+  * d/control: Align (Build-)Depends with upstream.
+  * d/rules: Switch to stestr inline with upsream.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Thu, 08 Sep 2022 19:44:39 -0400
+
+python-os-ken (2.4.0-0ubuntu1) kinetic; urgency=medium
+
+  * New upstream release for OpenStack Zed.
+  * d/control: Align (Build-)Depends with upstream.
+  * d/control: Switch to debhelper compat 13.
+  * d/control: Update standards version to 4.6.1.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Tue, 31 May 2022 15:24:15 -0400
+
+python-os-ken (2.3.1-0ubuntu1) jammy; urgency=medium
+
+  * New upstream release for OpenStack Yoga.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Wed, 02 Mar 2022 14:28:04 -0500
+
+python-os-ken (2.3.0-0ubuntu1) jammy; urgency=medium
+
+  * New upstream release for OpenStack Yoga.
+  * d/control: Align (Build-)Depends with upstream.
+  * d/control: Bump debhelper compat to 13.
+
+ -- Corey Bryant <corey.bryant@canonical.com>  Wed, 01 Dec 2021 15:29:06 -0500
+
 python-os-ken (2.1.0-0ubuntu1) impish; urgency=medium
 
   * New upstream release for OpenStack Xena.
