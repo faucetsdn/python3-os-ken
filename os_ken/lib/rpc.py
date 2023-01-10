@@ -24,7 +24,6 @@ from collections import deque
 import select
 
 import msgpack
-import six
 
 
 class MessageType(object):
@@ -40,7 +39,12 @@ class MessageEncoder(object):
 
     def __init__(self):
         super(MessageEncoder, self).__init__()
-        self._packer = msgpack.Packer(use_bin_type=True)
+        # NOTE(ralonsoh): msgpack>=1.0.0
+        self._packer = msgpack.Packer()
+        # The strict_map_key=False option is required to use int keys in
+        # maps; it is disabled by default to prevent hash collision denial
+        # of service attacks (hashdos) in scenarios where an attacker can
+        # control the keys to be hashed.
         self._unpacker = msgpack.Unpacker(strict_map_key=False)
         self._next_msgid = 0
 
@@ -50,7 +54,7 @@ class MessageEncoder(object):
         return this_id
 
     def create_request(self, method, params):
-        assert isinstance(method, (str, six.binary_type))
+        assert isinstance(method, (str, bytes))
         assert isinstance(params, list)
         msgid = self._create_msgid()
         return (self._packer.pack(
@@ -63,7 +67,7 @@ class MessageEncoder(object):
         return self._packer.pack([MessageType.RESPONSE, msgid, error, result])
 
     def create_notification(self, method, params):
-        assert isinstance(method, (str, six.binary_type))
+        assert isinstance(method, (str, bytes))
         assert isinstance(params, list)
         return self._packer.pack([MessageType.NOTIFY, method, params])
 
