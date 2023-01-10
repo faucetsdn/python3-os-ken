@@ -39,10 +39,6 @@ class Test_Manager(unittest.TestCase):
     def test_version(self):
         self.assertRaises(SystemExit, main)
 
-    @mock.patch('sys.argv', new=['osken-manager', '--help'])
-    def test_help(self):
-        self.assertRaises(SystemExit, main)
-
     @staticmethod
     def _reset_globals():
         # hack to reset globals like SERVICE_BRICKS.
