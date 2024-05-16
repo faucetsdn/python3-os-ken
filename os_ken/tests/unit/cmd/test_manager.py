@@ -17,7 +17,7 @@
 import unittest
 from unittest import mock
 
-from imp import reload
+from importlib import reload
 
 from os_ken.cmd.manager import main
 
@@ -37,6 +37,10 @@ class Test_Manager(unittest.TestCase):
 
     @mock.patch('sys.argv', new=['osken-manager', '--version'])
     def test_version(self):
+        self.assertRaises(SystemExit, main)
+
+    @mock.patch('sys.argv', new=['osken-manager', '--help'])
+    def test_help(self):
         self.assertRaises(SystemExit, main)
 
     @staticmethod
