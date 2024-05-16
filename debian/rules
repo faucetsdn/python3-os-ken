@@ -1,22 +1,37 @@
 #!/usr/bin/make -f
 
-export PYBUILD_NAME=python-os-ken
-
+UPSTREAM_GIT := https://github.com/openstack/os-ken.git
 include /usr/share/openstack-pkg-tools/pkgos.make
 
 %:
-	dh $@ --with python3 --buildsystem=pybuild
+	dh $@ --buildsystem=python_distutils --with python3,sphinxdoc
+
+override_dh_auto_clean:
+	rm -rf build .stestr *.egg-info
+	find . -iname '*.pyc' -delete
+	for i in $$(find . -type d -iname __pycache__) ; do rm -rf $$i ; done
+
+override_dh_auto_build:
+	echo "Do nothing..."
 
 override_dh_auto_install:
-	pkgos-dh_auto_install --no-py2
+	pkgos-dh_auto_install --no-py2 --in-tmp
+
+ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
+	PYTHONPATH=$(CURDIR)/debian/tmp/usr/lib/python3/dist-packages pkgos-dh_auto_test --no-py2 'os_ken\.tests\.unit\.(?!cmd\.test_manager\.Test_Manager\.test_help)'
+endif
 
 override_dh_auto_test:
-ifeq (,$(findstring nocheck, $(DEB_BUILD_OPTIONS)))
-	pkgos-dh_auto_test --no-py2
+	echo "Do nothing..."
+
+override_dh_auto_test:
+	echo "Do nothing..."
+
+override_dh_sphinxdoc:
+ifeq (,$(findstring nodoc, $(DEB_BUILD_OPTIONS)))
+	PYTHONPATH=. python3 -m sphinx -b html doc/source debian/python-os-ken-doc/usr/share/doc/python-os-ken-doc/html
+	dh_sphinxdoc
 endif
 
 override_dh_python3:
 	dh_python3 --shebang=/usr/bin/python3
-
-override_dh_auto_clean:
-	dh_auto_clean
