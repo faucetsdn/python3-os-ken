@@ -1,30 +1,31 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: os-ken
-Source: https://docs.openstack.org/os-ken/latest/
-Comment: os-ken is a fork of the ryu project
+Source: http://www.openstack.org/
 
 Files: *
-Copyright: 2014 Ryu Project Team <ryu-devel@lists.sourceforge.net>,
-           2010-2011 OpenStack LLC,
-           2010 United States Government,
-           2011-2017 Nippon Telegraph and Telephone Corporation,
-           2011-2014 YAMAMOTO Takashi <yamamoto@valinux.co.jp>,
-           2014 VA Linux System Japan,
-           2013-2014 Isaku Yamahata <yamahata@valinux.co.jp>,
-           2013 Stratosphere Inc.,
-           2013 Hewlett-Packard Development Company, L.P.,
-           2014 Rackspace Hosting,
-           2014 Xinguard, Inc.,
-           2016 Bouygues Telecomm,
-           2016 Rackspace US, Inc.,
-           2016 Fumihiko Kakuma <kakuma@valinux.co.jp>
-License: Apache-2.0
+Copyright: (c) 2010-2019, OpenStack Foundation <openstack-dev@lists.openstack.org>
+           (c) 2013-2015, YAMAMOTO Takashi <yamamoto@valinux.co.jp>
+           (c) 2016, Fumihiko Kakuma <kakuma@valinux.co.jp>
+           (c) 2011-2013 Isaku Yamahata <yamahata@valinux.co.jp>
+           (c) 2011-2018, Nippon Telegraph and Telephone Corporation.
+           (c) 2010, IETF Trust
+           (c) 2010, US Government as represented by the Administrator of NASA
+           (c) 2013, Hewlett-Packard Development Company, L.P.
+           (c) 2013-2015, Stratosphere Inc.
+           (c) 2001, The Internet Society and W3C
+           (c) 2016, Bouygues Telecom.
+           (c) 2014, Xinguard, Inc.
+           (c) 2014, Rackspace
+           (c) 2014, Kiyonari Harigae <lakshmi@cloudysunny14.org>
+           (c) 2012, Simon Horman <horms ad verge net au>
+           (c) 2014, VA Linux Systems Japan K.K.
+License: Apache-2
 
 Files: debian/*
-Copyright: 2019 Canonical Ltd
-License: Apache-2.0
+Copyright: (c) 2019, Thomas Goirand <zigo@debian.org>
+License: Apache-2
 
-License: Apache-2.0
+License: Apache-2
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -38,4 +39,4 @@ License: Apache-2.0
  limitations under the License.
  .
  On Debian-based systems the full text of the Apache version 2.0 license
- can be found in `/usr/share/common-licenses/Apache-2.0'.
+ can be found in /usr/share/common-licenses/Apache-2.0.

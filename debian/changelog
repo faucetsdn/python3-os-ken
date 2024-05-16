@@ -1,124 +1,176 @@
-python-os-ken (2.5.0-0ubuntu3) kinetic; urgency=medium
+python-os-ken (2.8.1-3) unstable; urgency=medium
 
-  * d/py3dist-overrides: Add ncclient to ensure dh_python3 does not
-    add python3-ncclient to Depends.
+  * Blacklist Test_Manager.test_help() that underterministicaly fails
+    (Closes: #1029657).
 
- -- Corey Bryant <corey.bryant@canonical.com>  Tue, 13 Sep 2022 12:14:07 -0400
+ -- Thomas Goirand <zigo@debian.org>  Tue, 07 May 2024 11:28:31 +0200
 
-python-os-ken (2.5.0-0ubuntu2) kinetic; urgency=medium
+python-os-ken (2.8.1-2) unstable; urgency=medium
 
-  * d/control: Move python3-ncclient to Suggests until in main.
+  * Uploading to unstable.
 
- -- Corey Bryant <corey.bryant@canonical.com>  Tue, 13 Sep 2022 12:02:45 -0400
+ -- Thomas Goirand <zigo@debian.org>  Wed, 03 Apr 2024 16:20:53 +0200
 
-python-os-ken (2.5.0-0ubuntu1) kinetic; urgency=medium
+python-os-ken (2.8.1-1) experimental; urgency=medium
 
-  * New upstream release for OpenStack Zed.
-  * d/control: Align (Build-)Depends with upstream.
-  * d/rules: Switch to stestr inline with upsream.
+  * New upstream release.
+  * Drop use-importlib-not-imp.patch, fixed upstream.
 
- -- Corey Bryant <corey.bryant@canonical.com>  Thu, 08 Sep 2022 19:44:39 -0400
+ -- Thomas Goirand <zigo@debian.org>  Sat, 24 Feb 2024 17:41:50 +0100
 
-python-os-ken (2.4.0-0ubuntu1) kinetic; urgency=medium
+python-os-ken (2.7.0-3) unstable; urgency=medium
 
-  * New upstream release for OpenStack Zed.
-  * d/control: Align (Build-)Depends with upstream.
-  * d/control: Switch to debhelper compat 13.
-  * d/control: Update standards version to 4.6.1.
+  * Add use-importlib-not-imp.patch (Closes: #1058180).
 
- -- Corey Bryant <corey.bryant@canonical.com>  Tue, 31 May 2022 15:24:15 -0400
+ -- Thomas Goirand <zigo@debian.org>  Tue, 12 Dec 2023 16:53:30 +0100
 
-python-os-ken (2.3.1-0ubuntu1) jammy; urgency=medium
+python-os-ken (2.7.0-2) unstable; urgency=medium
 
-  * New upstream release for OpenStack Yoga.
+  * Uploading to unstable.
+  * d/watch: use version 4 and gitmode.
 
- -- Corey Bryant <corey.bryant@canonical.com>  Wed, 02 Mar 2022 14:28:04 -0500
+ -- Thomas Goirand <zigo@debian.org>  Mon, 02 Oct 2023 10:02:31 +0200
 
-python-os-ken (2.3.0-0ubuntu1) jammy; urgency=medium
+python-os-ken (2.7.0-1) experimental; urgency=medium
 
-  * New upstream release for OpenStack Yoga.
-  * d/control: Align (Build-)Depends with upstream.
-  * d/control: Bump debhelper compat to 13.
+  * New upstream release.
+  * Cleans better.
 
- -- Corey Bryant <corey.bryant@canonical.com>  Wed, 01 Dec 2021 15:29:06 -0500
+ -- Thomas Goirand <zigo@debian.org>  Wed, 30 Aug 2023 10:26:43 +0200
 
-python-os-ken (2.1.0-0ubuntu1) impish; urgency=medium
+python-os-ken (2.6.0-2) unstable; urgency=medium
 
-  * New upstream release for OpenStack Xena.
-  * d/control: Align (Build-)Depends with upstream.
+  * Uploading to unstable.
 
- -- Corey Bryant <corey.bryant@canonical.com>  Tue, 07 Sep 2021 14:18:09 -0400
+ -- Thomas Goirand <zigo@debian.org>  Mon, 19 Jun 2023 11:02:20 +0200
 
-python-os-ken (2.0.0-0ubuntu1) impish; urgency=medium
+python-os-ken (2.6.0-1) experimental; urgency=medium
 
-  * New upstream release for OpenStack Xena.
-  * d/control: Align (Build-)Depends with upstream.
+  * New upstream release.
+  * Removed version of python3-ncclient (build-)depends, as it's satisfied in
+    Bookworm.
 
- -- Chris MacNaughton <chris.macnaughton@ubuntu.com>  Wed, 09 Jun 2021 07:39:15 +0000
+ -- Thomas Goirand <zigo@debian.org>  Wed, 22 Feb 2023 09:21:23 +0100
 
-python-os-ken (1.3.0-0ubuntu1) hirsute; urgency=medium
+python-os-ken (2.5.0-2) unstable; urgency=medium
 
-  * d/control: Update VCS paths for move to lp:~ubuntu-openstack-dev.
-  * New upstream release for OpenStack Wallaby.
-  * d/control: Align (Build-)Depends with upstream.
+  * Uploading to unstable.
 
- -- Chris MacNaughton <chris.macnaughton@ubuntu.com>  Mon, 07 Dec 2020 11:19:23 +0000
+ -- Thomas Goirand <zigo@debian.org>  Fri, 23 Sep 2022 11:52:25 +0200
 
-python-os-ken (1.2.0-0ubuntu1) groovy; urgency=medium
+python-os-ken (2.5.0-1) experimental; urgency=medium
 
-  * New upstream release for OpenStack Victoria.
-  * d/p/monkey-patch-original-current-thread.patch: Dropped. Fixed
-    in new upstream release.
+  * New upstream release.
+  * Fixed (build-)depends for this release, including removing build-depends
+    on nose (Closes: #1018547).
+  * Re-enable unit testing.
+  * Add autopkgtest.
 
- -- Corey Bryant <corey.bryant@canonical.com>  Fri, 11 Sep 2020 15:56:41 -0400
+ -- Thomas Goirand <zigo@debian.org>  Tue, 30 Aug 2022 09:16:43 +0200
 
-python-os-ken (1.1.0-0ubuntu1) groovy; urgency=medium
+python-os-ken (2.3.1-2) unstable; urgency=medium
 
-  * New upstream release for OpenStack Victoria.
-  * d/control: Align (Build-)Depends with upstream.
+  * Uploading to unstable.
 
- -- Chris MacNaughton <chris.macnaughton@canonical.com>  Fri, 24 Jul 2020 13:21:34 +0000
+ -- Thomas Goirand <zigo@debian.org>  Fri, 25 Mar 2022 14:36:19 +0100
 
-python-os-ken (1.0.0-0ubuntu2) groovy; urgency=medium
+python-os-ken (2.3.1-1) experimental; urgency=medium
 
-  * d/p/monkey-patch-original-current-thread.patch: Cherry-picked
-    from upstream to fix Python 3.8 monkey patching (LP: #1863021).
+  * New upstream release.
 
- -- Corey Bryant <corey.bryant@canonical.com>  Thu, 14 May 2020 13:02:34 -0400
+ -- Thomas Goirand <zigo@debian.org>  Sat, 19 Feb 2022 10:43:20 +0100
 
-python-os-ken (1.0.0-0ubuntu1) focal; urgency=medium
+python-os-ken (2.1.0-2) unstable; urgency=medium
 
-  * New upstream release for OpenStack Ussuri.
-  * d/control: Drop remaining py2 Build-Depends.
-  * d/rules: Switch to pybuild.
+  * Uploading to unstable.
 
- -- Corey Bryant <corey.bryant@canonical.com>  Thu, 12 Mar 2020 10:09:57 -0400
+ -- Thomas Goirand <zigo@debian.org>  Wed, 29 Sep 2021 10:58:22 +0200
 
-python-os-ken (0.4.1-0ubuntu1) eoan; urgency=medium
+python-os-ken (2.1.0-1) experimental; urgency=medium
 
-  * New upstream release for OpenStack Train.
+  * New upstream release.
+  * Removed python3-tinyrpc from (build-)depends.
 
- -- Corey Bryant <corey.bryant@canonical.com>  Wed, 25 Sep 2019 14:19:43 -0400
+ -- Thomas Goirand <zigo@debian.org>  Tue, 24 Aug 2021 10:46:54 +0200
 
-python-os-ken (0.4.0-0ubuntu1) eoan; urgency=medium
+python-os-ken (1.4.0-2) unstable; urgency=medium
 
-  * New upstream release for OpenStack Train.
-  * d/control: Align (Build-)Depends with upstream.
-  * d/gbp.conf: Align with other Ubuntu-maintained OpenStack packages.
-  * d/rules: Drop mv's of requirements unit test module as it has
-    been removed from the upstream source.
+  * Upload to unstable.
 
- -- Corey Bryant <corey.bryant@canonical.com>  Tue, 30 Jul 2019 15:35:04 -0400
+ -- Thomas Goirand <zigo@debian.org>  Mon, 16 Aug 2021 15:01:45 +0200
 
-python-os-ken (0.3.1-0ubuntu2) disco; urgency=medium
+python-os-ken (1.4.0-1) experimental; urgency=medium
 
-  * d/rules: Switch | -> ||.
-  * d/*: Misc packaging tidy.
+  * New upstream release.
+  * Fixed (build-)depends satisfied by Bullseye.
 
- -- James Page <james.page@ubuntu.com>  Thu, 14 Mar 2019 07:03:24 +0000
+ -- Thomas Goirand <zigo@debian.org>  Mon, 08 Mar 2021 12:38:09 +0100
 
-python-os-ken (0.3.1-0ubuntu1) disco; urgency=low
+python-os-ken (1.2.0-2) unstable; urgency=medium
 
-  * Initial release for OpenStack Stein.
+  * Uploading to unstable.
+  * Fixed debian/watch.
+  * Add a debian/salsa-ci.yml.
 
- -- James Page <james.page@ubuntu.com>  Fri, 01 Feb 2019 09:30:51 +0000
+ -- Thomas Goirand <zigo@debian.org>  Thu, 15 Oct 2020 13:41:30 +0200
+
+python-os-ken (1.2.0-1) experimental; urgency=medium
+
+  * New upstream release.
+  * Removed python3-mock from build-depends.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 07 Sep 2020 17:36:47 +0200
+
+python-os-ken (1.0.0-3) unstable; urgency=medium
+
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Fri, 08 May 2020 18:21:35 +0200
+
+python-os-ken (1.0.0-2) experimental; urgency=medium
+
+  * Add missing override_dh_python3 to fix shebang.
+
+ -- Thomas Goirand <zigo@debian.org>  Thu, 09 Apr 2020 15:49:58 +0200
+
+python-os-ken (1.0.0-1) experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Thomas Goirand <zigo@debian.org>  Mon, 06 Apr 2020 22:41:27 +0200
+
+python-os-ken (0.4.1-2) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * Bump Standards-Version to 4.4.1.
+
+  [ Thomas Goirand ]
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 23 Oct 2019 00:48:24 +0200
+
+python-os-ken (0.4.1-1) experimental; urgency=medium
+
+  [ Ondřej Nový ]
+  * Running wrap-and-sort -bast.
+  * d/copyright: Use https protocol in Format field.
+  * Use debhelper-compat instead of debian/compat.
+  * d/control: Fix wrong Vcs-*.
+  * Bump Standards-Version to 4.4.0.
+
+  [ Thomas Goirand ]
+  * New upstream release.
+
+ -- Thomas Goirand <zigo@debian.org>  Wed, 18 Sep 2019 10:13:08 +0200
+
+python-os-ken (0.3.1-2) unstable; urgency=medium
+
+  * Uploading to unstable.
+
+ -- Thomas Goirand <zigo@debian.org>  Tue, 16 Jul 2019 23:39:04 +0200
+
+python-os-ken (0.3.1-1) experimental; urgency=medium
+
+  * Initial release. (Closes: #925942)
+
+ -- Thomas Goirand <zigo@debian.org>  Thu, 28 Mar 2019 23:15:21 +0100

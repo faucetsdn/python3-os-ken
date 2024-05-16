@@ -140,12 +140,12 @@ class Command(object):
 
 
 class DockerImage(object):
-    def __init__(self, baseimage='ubuntu:16.04'):
+    def __init__(self, baseimage='ubuntu:20.04'):
         self.baseimage = baseimage
         self.cmd = Command()
 
     def get_images(self):
-        out = self.cmd.sudo('sudo docker images')
+        out = self.cmd.sudo('docker images')
         images = []
         for line in out.splitlines()[1:]:
             images.append(line.split()[0])
@@ -171,7 +171,7 @@ class DockerImage(object):
         pkges = ' '.join([
             'telnet',
             'tcpdump',
-            'quagga',
+            'quagga-bgpd',
         ])
         if image:
             use_image = image
@@ -181,7 +181,13 @@ class DockerImage(object):
         c << 'FROM %s' % use_image
         c << 'RUN apt-get update'
         c << 'RUN apt-get install -qy --no-install-recommends %s' % pkges
-        c << 'CMD /usr/lib/quagga/bgpd'
+        c << 'RUN echo "#!/bin/sh" > /bgpd'
+        c << 'RUN echo mkdir -p /run/quagga >> /bgpd'
+        c << 'RUN echo chmod 755 /run/quagga >> /bgpd'
+        c << 'RUN echo chown quagga:quagga /run/quagga >> /bgpd'
+        c << 'RUN echo exec /usr/sbin/bgpd >> /bgpd'
+        c << 'RUN chmod +x /bgpd'
+        c << 'CMD /bgpd'
 
         self.cmd.sudo('rm -rf %s' % workdir)
         self.cmd.execute('mkdir -p %s' % workdir)
@@ -213,8 +219,8 @@ class DockerImage(object):
             # might fail if the current directory contains the symlink to
             # Docker host file systems.
             '&& rm -rf *.egg-info/ build/ dist/ .tox/ *.log'
-            '&& pip install -r tools/pip-requires -r tools/optional-requires',
-            '&& python setup.py install',
+            '&& pip install -r requirements.txt -r test-requirements.txt',
+            '&& pip install .',
         ])
         c << install
 

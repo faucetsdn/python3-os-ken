@@ -1,0 +1,9 @@
+Document: python-os-ken-doc
+Title: os-ken Documentation
+Author: N/A
+Abstract: Sphinx documentation for os-ken
+Section: Programming/Python
+
+Format: HTML
+Index: /usr/share/doc/python-os-ken-doc/html/index.html
+Files: /usr/share/doc/python-os-ken-doc/html/*
